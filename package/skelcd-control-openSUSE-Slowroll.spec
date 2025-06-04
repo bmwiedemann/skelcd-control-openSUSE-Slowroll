@@ -27,7 +27,7 @@
 #
 ######################################################################
 Name:           skelcd-control-openSUSE-Slowroll
-Version:        20240529
+Version:        20240321
 Release:        0
 Summary:        The openSUSE Slowroll Installation Control file
 License:        MIT
@@ -101,13 +101,14 @@ Requires:       release-notes
 %endif
 
 %description
-This package contains the control file used for the openSUSE Slowroll installation.
+This package contains the control file used for openSUSE Slowroll installation.
 
 %prep
 
-%autosetup -p1 -n skelcd-control-openSUSE-Slowroll-%{version}
+%setup -q -n skelcd-control-openSUSE-Slowroll-%{version}
 
 %build
+make %{?_smp_mflags} -C control
 
 %check
 make %{?_smp_mflags} -C control check
