@@ -3,7 +3,7 @@
 (
 cd ../skelcd-control-openSUSE
 rm -f 00*.patch
-git format-patch e9481b77a43529a8aa4167c8b58c7419d2a51a7a^..
+git format-patch a15369434de65db8f0c06b54431acf047c3b7c92..
 )
 
 git am --abort

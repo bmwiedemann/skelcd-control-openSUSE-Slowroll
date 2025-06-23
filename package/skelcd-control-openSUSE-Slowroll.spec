@@ -27,7 +27,7 @@
 #
 ######################################################################
 Name:           skelcd-control-openSUSE-Slowroll
-Version:        20250430
+Version:        20250620
 Release:        0
 Summary:        The openSUSE Slowroll Installation Control file
 License:        MIT
