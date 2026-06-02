@@ -39,6 +39,8 @@ BuildRequires:  libxml2-tools
 # xsltproc
 BuildRequires:  libxslt-tools
 BuildRequires:  yast2-installation-control >= 5.0.1
+# we need to copy most of the openSUSE control.xml to Slowroll
+BuildRequires:  skelcd-control-openSUSE
 ######################################################################
 #
 # Here is the list of Yast packages which are needed in the
@@ -107,7 +109,7 @@ This package contains the control file used for openSUSE Slowroll installation.
 %setup -q -n skelcd-control-openSUSE-Slowroll-%{version}
 
 %build
-make %{?_smp_mflags} -C control
+xsltproc control/Slowroll.xsl /usr/lib/skelcd/CD1/control.xml > control/control.xml
 
 %check
 make %{?_smp_mflags} -C control check
