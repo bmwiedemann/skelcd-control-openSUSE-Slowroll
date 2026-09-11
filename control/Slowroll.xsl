@@ -103,4 +103,10 @@
         </xsl:copy>
     </xsl:template>
 
+    <!-- Make KDE Plasma the default preselected system role.
+         YaST preselects the first role (by <order/>) unless that role carries
+         <no_default/>; dropping it from the KDE role (order 100) makes KDE the
+         default desktop for openSUSE Slowroll. -->
+    <xsl:template match="y2:system_roles/y2:system_role[y2:id='kde']/y2:no_default"/>
+
 </xsl:stylesheet>
